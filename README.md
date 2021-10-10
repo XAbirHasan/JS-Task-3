@@ -1,5 +1,5 @@
 # JS Task 3
-This is simple task provie by Qtec for my internship selection.
+This is a simple task provided by Qtec for my internship selection.
 
 
 ## Screen shot
