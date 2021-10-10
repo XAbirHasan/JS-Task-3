@@ -6,8 +6,13 @@ body{
     border: 1px solid blue;
 }
 
-#search{
+.form-group #search{
     margin:10px;
+    padding: 25px 8px;
+}
+
+.form-group #search:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .custom-card{
@@ -22,3 +27,110 @@ body{
 .custom-row{
     margin: 10px;
 }
+
+.side-cart-container{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: white;
+    align-items: center;
+}
+
+.side-cart-container .top-customer{
+    color: #382db4;
+    margin: 15px 20px 0px 28px;
+    font-weight: 500;
+    /* border:1px solid red; */
+
+}
+
+.side-cart-container .hline{ 
+    border: 1px solid rgba(94, 94, 94, 0.322);
+    width: 100%;
+    height: 0px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+
+.side-cart-container .added-item{
+    width: 100%;
+    margin-top: 8px;
+    margin-left: 10px;
+    /* margin-bottom: -px; */
+    /* height: 50px; */
+    /* border:1px solid red; */
+}
+
+.side-cart-container .added-item .hline{
+    border: 1px solid rgba(94, 94, 94, 0.322);
+    width: 100%;
+    height: 0px;
+    margin-left: -10px;
+    margin-top: -12px;
+}
+
+
+.side-cart-container .col-2 i{
+    color: black;
+}
+
+.side-cart-container .col-2 i:hover{
+    color: rgb(255, 61, 61);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: all 0.3s;
+    
+}
+
+.side-cart-container  sup{
+    background-color: #4FB39B;
+    color: white;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 50px;
+    left: 38px;
+    top: -57px;
+}
+
+.side-cart-container .calculation{
+    width: 100%;
+    margin: 100px 10px 10px 10px;
+    border: 1px solid red;
+
+}
+.side-cart-container .calculation .money-cal{
+    font-weight: 600;
+    padding: 5px 0px;
+}
+
+.side-cart-container .calculation .money-cal .money{
+    text-align: end;
+}
+
+.side-cart-container .calculation .money-cal .discount{
+    color: #6157ce;
+}
+
+.side-cart-container .calculation .pay-btn{
+    margin: 10px 0px;
+    background-color: #8c85d8;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+
+.side-cart-container .calculation .pay-btn .money{
+    text-align: end;
+}
+
+.side-cart-container .calculation .pay-btn:hover{
+    background-color: #7269d8;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: all 0.3s;
+}
+
+

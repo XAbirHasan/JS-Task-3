@@ -8,7 +8,7 @@ This is simple task provie by Qtec for my internship selection.
 <!-- <img src="demo/1.png" alt="home" width="300"/> -->
 
 
- ## Authors
+## Authors
 
 * **AbirHasan**
 Check out my other works [@XAbirHasan](https://github.com/XAbirHasan)
