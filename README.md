@@ -15,13 +15,13 @@ Year: 2021
 ## Screen shot
 
 ### Load data
-<img src="demo/1.png" alt="home" width="700"/>
+<img src="demo/1.png" alt="home" width="800"/>
 
 ### Add cart
-<img src="demo/2.png" alt="home" width="700"/>
+<img src="demo/2.png" alt="home" width="800"/>
 
 ### Delete
-<img src="demo/3.png" alt="home" width="350"/>     <img src="demo/4.png" alt="home" width="350"/>
+<img src="demo/3.png" alt="home" width="390"/>     <img src="demo/4.png" alt="home" width="390"/>
 
 
 ## Authors
