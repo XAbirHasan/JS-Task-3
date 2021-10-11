@@ -2,7 +2,7 @@
 var product_list = [
     {
        "id":1,
-       "title":"Fjallraven - Foldsack No. 1 Backpack",
+       "title":"Fjallraven - Foldsack No. 1 Backpack, ladis bag",
        "price":1090.95,
        "image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
     },
@@ -131,7 +131,6 @@ var product_list = [
 
 // add element's to the product cart
 // sample card data
-
 for( let i = 0; i<product_list.length; i++){
     data = product_list[i];
     var html_contex = '<div class="card custom-card" style="width: 8rem;" id="'+data["id"]+'">'  +
@@ -143,17 +142,16 @@ for( let i = 0; i<product_list.length; i++){
 }
 
 
-$(document).ready(function(){
-    // console.log("hi");
-    $('.custom-card').click(function(){
-      var product_id = $(this).attr('id');
-      // alert( "id is: " + product_id );
-      addtoCart(product_id);
-    });
-    
-    
-}); 
+// jquery
 
+$(document).ready(function(){
+   // console.log("hi");
+   $('.custom-card').click(function(){
+     var product_id = $(this).attr('id');
+     // alert( "id is: " + product_id );
+     addtoCart(product_id);
+   });
+}); 
 
 // cart elements
 var cart_elements = [
@@ -178,24 +176,19 @@ function addtoCart(product_id){
    else{
       // get index
       var object_index = cart_elements.findIndex((obj => obj.id == product_id));
-       //Log object to Console.
       // console.log("Before update: ", cart_elements[object_index])
       //Update object's count property.
       cart_elements[object_index].count += 1; 
-      //Log object to console again.
       // console.log("After update: ", cart_elements[object_index])
    }
    update_cart();
    //console.log(cart_elements.length);
 }
 
-
-
-
 function update_cart(){
    $("#cart_item").empty();
 
-   var subtotal = 0;
+   
    for( let i = 0; i<cart_elements.length; i++){
       var product_id = cart_elements[i].id;
       // console.log(product_id);
@@ -206,30 +199,64 @@ function update_cart(){
       // console.log(product);
 
       // show cart item
-      var html_contex = '<div class="row added-item">'+ 
+      var html_contex = '<div class="row added-item" id="cart_id_'+product_id+'">'+ 
                            '<div class="col-2">'+
                               '<div class="card" style="width: 3rem;">'+
                                  '<img class="card-img-top" src="'+product.image+'" alt="Card image cap">' +
                               '</div>'+
                               '<sup>'+cart_elements[i].count+'</sup>'+
                            '</div>'+
-                           '<div class="col-5">'+ product.title +'</div>'+
+                           '<div class="col-5 truncate">'+ product.title +'</div>'+
                            '<div class="col-3">BDT '+ (product.price*cart_elements[i].count).toFixed(2) +'</div>'+
-                           '<div class="col-2"><i class="fas fa-trash-alt"></i></div>'+
+                           '<div class="col-2"><i class="fas fa-trash-alt delete-cart" id="del_id_'+product_id+'"></i></div>'+
                            '<div class="hline"></div>'+
                         '</div>';
       $("#cart_item").append( html_contex );
 
+      
+   }
+   
+   // delete cart data
+   $('.delete-cart').click(function(){
+      var product_id = $(this).attr('id');
+      product_id = product_id.replace("del_id_", "")
+
+      var answer = window.confirm("Do you want to delete cart?");
+      if (answer) {
+         // remove from view
+         document.getElementById("cart_id_"+product_id).remove();
+
+         // remove from list
+         var product_index = cart_elements.findIndex((obj => obj.id == product_id));
+         cart_elements.splice(product_index, 1);
+         update_payment();
+         
+      }
+      
+   });
+
+   update_payment();
+}
+
+
+function update_payment(subtotal){
+  
+   var subtotal = 0;
+
+   for( let i = 0; i<cart_elements.length; i++){
+      var product_id = cart_elements[i].id;
+      // console.log(product_id);
+
+      // get product detalis
+      var product_index = product_list.findIndex((obj => obj.id == product_id));
+      var product = product_list[product_index];
       subtotal += (product.price*cart_elements[i].count);
    }
 
-   update_payment(subtotal);
-}
-
-function update_payment(subtotal){
    var discount = 0;
    var taxpercentage = 0;  // 0 percent,
    var tax = (subtotal*(taxpercentage/100));
+
    total = subtotal + tax - discount;
 
    document.getElementById('discount').innerHTML = "BDT "+discount.toFixed(2);
@@ -239,4 +266,30 @@ function update_payment(subtotal){
    document.getElementById('total').innerHTML = "BDT "+total.toFixed(2);
    document.getElementById('paymoney').innerHTML = "BDT "+total.toFixed(2);
 
+}
+
+
+// for search data.
+function search_data(){
+   search_key = document.getElementById("search_input").value.toUpperCase();
+   div = document.getElementById("product_holder");
+
+   product_container = div.getElementsByClassName("custom-card");
+   product_names = div.getElementsByTagName("h6");
+
+   var count = 0;
+   for(i = 0; i < product_names.length; i++){
+       product = product_names[i].innerHTML;
+       if(product.toUpperCase().indexOf(search_key) > -1){
+         //   console.log(product);
+           product_container[i].style.display = "";
+           count = 1;
+       }
+       else{
+           product_container[i].style.display = "none";
+       }
+   }
+
+   if(count==0) document.getElementById("not_found").style.display = ""; 
+   else document.getElementById("not_found").style.display = "none";            
 }

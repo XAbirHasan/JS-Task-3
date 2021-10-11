@@ -12,7 +12,7 @@ body{
     /* border: 1px solid blue; */
 }
 
-.form-group #search{
+.form-group #search_input{
     margin:10px;
     padding: 25px 8px;
 }
@@ -27,7 +27,7 @@ body{
 
 
 
-.form-group #search:hover{
+.form-group #search_input:hover{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
@@ -76,6 +76,13 @@ body{
     margin-top: 10px;
 }
 
+
+.truncate {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 
 .custom-col .footer-section .button-section{
