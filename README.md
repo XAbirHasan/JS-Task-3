@@ -1,5 +1,5 @@
 # JS Task 3
-This is a simple task provided by "Qtec Careers" for my internship selection.
+This is a simple task provided by "Qtec Careers" for my internship selection.<br>
 All values are dynamic here. You can add discount and tax also (defalut value is 0). 
 
 live demo link: [JSTask3:ClickMe](https://xabirhasan.github.io/JS-Task-3/)
