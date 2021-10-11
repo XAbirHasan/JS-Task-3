@@ -2,7 +2,7 @@
 This is a simple task provided by "Qtec Careers" for my internship selection.
 All values are dynamic here. You can add discount and tax also (defalut value is 0). 
 
-live demo link: [JSTask3](https://xabirhasan.github.io/JS-Task-3/)
+live demo link: [JSTask3:ClickMe](https://xabirhasan.github.io/JS-Task-3/)
 
 ## Description
 Name: JS Task 3 <br>
@@ -11,6 +11,9 @@ Platfrom: Web <br>
 Year: 2021
 
 ## Video
+
+*this can take some time to load. (Slow to start)<br>
+<!-- <img src="demo/video.gif" alt="Home Screen" width="300"/> -->
 
 ## Screen shot
 
@@ -22,6 +25,9 @@ Year: 2021
 
 ### Delete
 <img src="demo/3.png" alt="home" width="390"/>     <img src="demo/4.png" alt="home" width="390"/>
+
+### Search
+<img src="demo/5.png" alt="home" width="800"/>
 
 
 ## Authors
