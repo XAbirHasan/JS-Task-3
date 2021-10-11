@@ -13,7 +13,7 @@ Year: 2021
 ## Video
 
 *this can take some time to load. (Slow to start)<br>
-<!-- <img src="demo/video.gif" alt="Home Screen" width="300"/> -->
+<img src="demo/video.gif" alt="Home Screen" width="800"/>
 
 ## Screen shot
 
